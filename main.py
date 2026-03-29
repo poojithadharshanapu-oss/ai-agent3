@@ -25,17 +25,17 @@ def ask_question(question: str):
         response = model.generate_content(question)
         answer = response.text if response.text else "No response generated"
 
-        # 2. Store in DB
-        conn = get_db_connection()
-        if conn:
-            cur = conn.cursor()
-            cur.execute(
-                "INSERT INTO ai_logs (question, answer) VALUES (%s, %s)",
-                (question, answer)
-            )
-            conn.commit()
-            cur.close()
-            conn.close()
+          #2. Store in DB
+         #conn = get_db_connection()
+        #if conn:
+            #cur = conn.cursor()
+            #cur.execute(
+                #"INSERT INTO ai_logs (question, answer) VALUES (%s, %s)",
+                #(question, answer)
+            #)
+            #conn.commit()
+            #cur.close()
+            #conn.close()
 
         # 3. Return response
         return {
