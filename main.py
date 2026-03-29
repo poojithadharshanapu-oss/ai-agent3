@@ -24,10 +24,7 @@ def ask_question(question: str):
         # 1. Generate response
         response = model.generate_content(question)
         answer = response.text if response.text else "No response generated"
-        return{
-            "question":question,
-            "answer":answer
-        }
+        return{"question":question,"answer":TEST responce"}
         expect exception as e:
         return{"error":str(e)}
 
