@@ -24,6 +24,12 @@ def ask_question(question: str):
         # 1. Generate response
         response = model.generate_content(question)
         answer = response.text if response.text else "No response generated"
+        return{
+            "question":question,
+            "answer":answer
+        }
+        expect exception as e:
+        return{"error":str(e)}
 
           #2. Store in DB
          #conn = get_db_connection()
