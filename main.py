@@ -12,7 +12,7 @@ model = genai.GenerativeModel('gemini-1.5-flash')
 # ✅ Initialize DB
 @app.on_event("startup")
 def startup_event():
-    init_db()
+    pass
 
 @app.get("/")
 def read_root():
